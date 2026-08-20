@@ -10,3 +10,4 @@ export * from './theme.types';
 export * from './booking.types';
 export * from './case.types';
 export * from './revenue.types';
+export * from './auth.types';

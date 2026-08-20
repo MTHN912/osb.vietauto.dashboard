@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '@/styles/globals.css';
 import { Providers } from './providers';
-import { DashboardLayout } from '@/components/templates/DashboardLayout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,9 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body>
         <Providers>
-          <DashboardLayout>
-            {children}
-          </DashboardLayout>
+          {children}
         </Providers>
       </body>
     </html>

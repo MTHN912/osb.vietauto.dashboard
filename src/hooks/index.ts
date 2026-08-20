@@ -6,3 +6,4 @@ export * from './dealers';
 export * from './rental-cars';
 export * from './services';
 export * from './overview';
+export * from './auth';

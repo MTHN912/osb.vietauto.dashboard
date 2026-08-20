@@ -4,3 +4,4 @@ export * from './package';
 export * from './timeSlots';
 export * from './id';
 export * from './export';
+export * from './pagination';

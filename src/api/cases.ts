@@ -152,7 +152,7 @@ export async function createCase(input: CreateCaseInput): Promise<Case> {
       insuranceCompany: 'Standard Insurance',
       claimNumber: `#CLM-${nextNumber}`,
       policyNumber: `POL-${nextNumber}`,
-      dateOfLoss: booking.bookingDate,
+      dateOfLoss: booking.bookingDate || new Date().toISOString().split('T')[0],
     },
     reasons: booking.service.name || 'Insurance Repair',
     status: input.status || CaseStatus.DRAFT,

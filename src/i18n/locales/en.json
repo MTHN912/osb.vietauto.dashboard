@@ -258,6 +258,7 @@
         "claimNumber": "Claim Number",
         "policyNumber": "Policy Number",
         "dateOfLoss": "Date of Loss",
+        "timeOfLoss": "Time of Loss",
         "claimType": "Claim Type / Reasons",
         "startDate": "Start Processing Date",
         "inspectionDate": "Insurance Inspection Date",
@@ -463,6 +464,7 @@
         "insuranceCompany": "Insurance Company",
         "selectCompanyPlaceholder": "Select company...",
         "dateOfLoss": "Date of Loss",
+        "timeOfLoss": "Time of Loss",
         "vehicleInfo": "Vehicle Information",
         "vin": "VIN",
         "make": "Make",
@@ -507,6 +509,7 @@
       "claimNumber": "Claim Number",
       "policyNumber": "Policy Number",
       "dateOfLoss": "Date of Loss",
+      "timeOfLoss": "Time of Loss",
       "rentalInfo": "Rental Car Information",
       "carType": "Type",
       "fuelType": "Fuel",
@@ -530,6 +533,7 @@
         "customerInfo": "Customer Information",
         "vehicleInfo": "Vehicle Information",
         "insuranceInfo": "Insurance Information",
+        "timeOfLoss": "Time of Loss",
         "bookingDateTime": "Booking Date & Time",
         "saveBtn": "Save Changes",
         "savingBtn": "Saving..."
@@ -604,5 +608,66 @@
     "loading": "Loading services...",
     "empty": "No services found for this package.",
     "deleteTooltip": "Delete service"
+  },
+  "auth": {
+    "brand": {
+      "title": "VietAuto Operations",
+      "tagline": "Next-Generation Dealer & Fleet Management Platform",
+      "description": "Streamlining auto service bookings, insurance claim lifecycles, rental car fleets, and multi-dealer revenue intelligence in one unified dashboard.",
+      "feature1": "Real-time Service Booking & Intake",
+      "feature2": "Full Insurance Claims Workflow",
+      "feature3": "Rental Fleet Tracking & Check-In",
+      "feature4": "Dealer-level Revenue & P&L Analytics",
+      "statLabel": "Active Network",
+      "statValue": "100+ Dealer Locations"
+    },
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Enter your credentials to access your dealer dashboard",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "name@dealer.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "••••••••",
+      "rememberMe": "Remember this device",
+      "forgotPassword": "Forgot password?",
+      "submitBtn": "Sign In",
+      "submittingBtn": "Signing in...",
+      "noAccount": "Don't have an account?",
+      "registerLink": "Register your dealership",
+      "demoTitle": "Quick Demo Login",
+      "adminDemo": "Admin (Global)",
+      "dealerDemo": "Dealer Manager (VietAuto)",
+      "orDivider": "OR"
+    },
+    "register": {
+      "title": "Create an Account",
+      "subtitle": "Join the VietAuto automotive management ecosystem",
+      "fullNameLabel": "Full Name",
+      "fullNamePlaceholder": "e.g. John Doe",
+      "emailLabel": "Business Email",
+      "emailPlaceholder": "john@dealership.com",
+      "phoneLabel": "Phone Number",
+      "phonePlaceholder": "e.g. 0901234567",
+      "dealerNameLabel": "Dealership / Workshop Name",
+      "dealerNamePlaceholder": "e.g. VietAuto Central",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Minimum 6 characters",
+      "confirmPasswordLabel": "Confirm Password",
+      "confirmPasswordPlaceholder": "Re-enter your password",
+      "agreeTerms": "I agree to the Terms of Service & Privacy Policy",
+      "submitBtn": "Create Account",
+      "submittingBtn": "Creating account...",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Sign In here"
+    },
+    "validation": {
+      "emailRequired": "Please enter your email address",
+      "passwordRequired": "Please enter your password",
+      "fullNameRequired": "Please enter your full name",
+      "phoneRequired": "Please enter your phone number",
+      "passwordMismatch": "Passwords do not match",
+      "passwordTooShort": "Password must be at least 6 characters",
+      "mustAgreeTerms": "You must agree to the Terms of Service"
+    }
   }
 }

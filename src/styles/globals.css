@@ -1,5 +1,3 @@
-
-
 *,
 *::before,
 *::after {
@@ -56,12 +54,13 @@ table {
 
 :root,
 [data-theme='light'] {
-
   --bg-primary: #f8f9fa;
   --bg-secondary: #ffffff;
   --bg-tertiary: #f1f3f7;
   --bg-hover: #f3f4f6;
   --bg-active: #e5e7eb;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f8fafc;
 
   --text-primary: #111827;
   --text-secondary: #4b5563;
@@ -72,12 +71,16 @@ table {
   --accent-hover: #1d4ed8;
   --accent-light: #eff6ff;
   --accent-text: #1d4ed8;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #eff6ff;
 
   --btn-primary-bg: #18181b;
   --btn-primary-text: #ffffff;
   --btn-primary-hover: #27272a;
 
   --border: #e5e7eb;
+  --border-color: #e2e8f0;
   --border-subtle: #f3f4f6;
   --border-hover: #d1d5db;
   --border-focus: #18181b;
@@ -184,12 +187,13 @@ table {
 }
 
 [data-theme='dark'] {
-
   --bg-primary: #090d16;
   --bg-secondary: #111827;
   --bg-tertiary: #1a2234;
   --bg-hover: #1f293d;
   --bg-active: #28354f;
+  --bg-surface: #111827;
+  --bg-subtle: #161f30;
 
   --text-primary: #f9fafb;
   --text-secondary: #9ca3af;
@@ -200,12 +204,16 @@ table {
   --accent-hover: #60a5fa;
   --accent-light: rgba(59, 130, 246, 0.15);
   --accent-text: #93c5fd;
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --primary-light: rgba(59, 130, 246, 0.15);
 
   --btn-primary-bg: #3b82f6;
   --btn-primary-text: #ffffff;
   --btn-primary-hover: #2563eb;
 
   --border: #1f293d;
+  --border-color: #1f293d;
   --border-subtle: #161f30;
   --border-hover: #334155;
   --border-focus: #3b82f6;

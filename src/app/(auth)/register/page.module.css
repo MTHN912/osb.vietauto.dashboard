@@ -1,0 +1,131 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.title {
+  font-size: 1.625rem;
+  font-weight: 800;
+  color: var(--text-primary, #0f172a);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #64748b);
+  line-height: 1.5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.passwordWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 0.75rem;
+  top: 2.125rem;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary, #64748b);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border-radius: var(--radius-sm, 4px);
+  transition: color 0.15s ease;
+}
+
+.eyeBtn:hover {
+  color: var(--text-primary, #0f172a);
+}
+
+.termsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.termsLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--text-secondary, #475569);
+  cursor: pointer;
+  user-select: none;
+  line-height: 1.4;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-sm, 4px);
+  border: 1px solid var(--border-color, #cbd5e1);
+  accent-color: var(--primary, #2563eb);
+  cursor: pointer;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.errorMessage {
+  padding: 0.625rem 0.875rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: var(--radius-md, 8px);
+  color: #ef4444;
+  font-size: 0.8125rem;
+}
+
+.fieldError {
+  color: #ef4444;
+  font-size: 0.75rem;
+}
+
+.footerRow {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-secondary, #64748b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  margin-top: 0.25rem;
+}
+
+.switchLink {
+  color: var(--primary, #2563eb);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.switchLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}

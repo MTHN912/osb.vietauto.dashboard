@@ -25,6 +25,7 @@ export function useEditBooking(bookingId?: string) {
     claimNumber: '',
     policyNumber: '',
     dateOfLoss: '',
+    timeOfLoss: '',
     insuranceCompany: '',
   });
   const [editVehicle, setEditVehicle] = useState({
@@ -57,13 +58,14 @@ export function useEditBooking(bookingId?: string) {
           phone: data.customer.phone,
           address: data.customer.address,
         });
-        setEditDate(data.bookingDate);
-        setEditTime(data.bookingTime);
+        setEditDate(data.bookingDate || '');
+        setEditTime(data.bookingTime || '');
         if (data.insurance) {
           setEditInsurance({
             claimNumber: data.insurance.claimNumber,
             policyNumber: data.insurance.policyNumber,
             dateOfLoss: data.insurance.dateOfLoss,
+            timeOfLoss: data.insurance.timeOfLoss || '',
             insuranceCompany: data.insurance.insuranceCompany,
           });
         }

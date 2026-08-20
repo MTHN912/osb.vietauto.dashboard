@@ -43,10 +43,10 @@ export async function getBookings(
       result = result.filter((b) => b.insurance?.dateOfLoss === filters.dateOfLoss);
     }
     if (filters.bookingDateFrom) {
-      result = result.filter((b) => b.bookingDate >= filters.bookingDateFrom!);
+      result = result.filter((b) => !!b.bookingDate && b.bookingDate >= filters.bookingDateFrom!);
     }
     if (filters.bookingDateTo) {
-      result = result.filter((b) => b.bookingDate <= filters.bookingDateTo!);
+      result = result.filter((b) => !!b.bookingDate && b.bookingDate <= filters.bookingDateTo!);
     }
     if (filters.customerName) {
       const name = filters.customerName.toLowerCase();
@@ -95,18 +95,18 @@ export async function getBookings(
       if (mode === 'quick') {
         if (quickRange && quickRange !== 'all_time') {
           if (startDate && endDate) {
-            result = result.filter((b) => b.bookingDate >= startDate && b.bookingDate <= endDate);
+            result = result.filter((b) => !!b.bookingDate && b.bookingDate >= startDate && b.bookingDate <= endDate);
           }
         }
       } else if (mode === 'specific' && specificDate) {
         result = result.filter((b) => b.bookingDate === specificDate);
       } else if (mode === 'range') {
         if (startDate && endDate) {
-          result = result.filter((b) => b.bookingDate >= startDate && b.bookingDate <= endDate);
+          result = result.filter((b) => !!b.bookingDate && b.bookingDate >= startDate && b.bookingDate <= endDate);
         } else if (startDate) {
-          result = result.filter((b) => b.bookingDate >= startDate);
+          result = result.filter((b) => !!b.bookingDate && b.bookingDate >= startDate);
         } else if (endDate) {
-          result = result.filter((b) => b.bookingDate <= endDate);
+          result = result.filter((b) => !!b.bookingDate && b.bookingDate <= endDate);
         }
       }
     }

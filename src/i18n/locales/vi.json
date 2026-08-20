@@ -258,6 +258,7 @@
         "claimNumber": "Số Claim",
         "policyNumber": "Số Policy",
         "dateOfLoss": "Ngày tổn thất",
+        "timeOfLoss": "Giờ xảy ra tổn thất",
         "claimType": "Loại bồi thường / Nguyên nhân",
         "startDate": "Ngày bắt đầu xử lý",
         "inspectionDate": "Ngày giám định bảo hiểm",
@@ -463,6 +464,7 @@
         "insuranceCompany": "Công ty Bảo hiểm",
         "selectCompanyPlaceholder": "Chọn công ty bảo hiểm...",
         "dateOfLoss": "Ngày tổn thất",
+        "timeOfLoss": "Giờ xảy ra tổn thất",
         "vehicleInfo": "Thông tin Phương tiện",
         "vin": "Số khung (VIN)",
         "make": "Hãng xe",
@@ -507,6 +509,7 @@
       "claimNumber": "Số Claim",
       "policyNumber": "Số Policy",
       "dateOfLoss": "Ngày tổn thất",
+      "timeOfLoss": "Giờ xảy ra tổn thất",
       "rentalInfo": "Thông tin Xe thuê",
       "carType": "Phân khúc xe",
       "fuelType": "Loại nhiên liệu",
@@ -530,6 +533,7 @@
         "customerInfo": "Thông tin Khách hàng",
         "vehicleInfo": "Thông tin Phương tiện",
         "insuranceInfo": "Thông tin Bảo hiểm",
+        "timeOfLoss": "Giờ xảy ra tổn thất",
         "bookingDateTime": "Thời gian Đặt hẹn",
         "saveBtn": "Lưu thay đổi",
         "savingBtn": "Đang lưu thay đổi..."
@@ -604,5 +608,66 @@
     "loading": "Đang tải danh sách dịch vụ...",
     "empty": "Chưa có dịch vụ nào trong gói này.",
     "deleteTooltip": "Xóa dịch vụ"
+  },
+  "auth": {
+    "brand": {
+      "title": "Hệ Thống VietAuto",
+      "tagline": "Nền Tảng Quản Trị Đại Lý & Đội Xe Thế Hệ Mới",
+      "description": "Tối ưu hóa quy trình đặt hẹn sửa chữa, quản lý vòng đời hồ sơ bảo hiểm, theo dõi đội xe cho thuê và phân tích doanh thu đa chi nhánh trên một nền tảng hợp nhất.",
+      "feature1": "Tiếp nhận & Đặt lịch hẹn thời gian thực",
+      "feature2": "Quy trình xử lý hồ sơ Claim bảo hiểm toàn diện",
+      "feature3": "Quản lý & Check-in bàn giao xe cho thuê",
+      "feature4": "Phân tích doanh thu & P&L từng chi nhánh",
+      "statLabel": "Mạng Lưới Hoạt Động",
+      "statValue": "100+ Đại Lý & Chi Nhánh"
+    },
+    "login": {
+      "title": "Chào mừng trở lại",
+      "subtitle": "Đăng nhập để truy cập trang quản trị đại lý của bạn",
+      "emailLabel": "Địa chỉ Email",
+      "emailPlaceholder": "name@dealer.com",
+      "passwordLabel": "Mật khẩu",
+      "passwordPlaceholder": "••••••••",
+      "rememberMe": "Ghi nhớ thiết bị này",
+      "forgotPassword": "Quên mật khẩu?",
+      "submitBtn": "Đăng Nhập",
+      "submittingBtn": "Đang đăng nhập...",
+      "noAccount": "Chưa có tài khoản?",
+      "registerLink": "Đăng ký cho đại lý của bạn",
+      "demoTitle": "Đăng nhập nhanh (Demo)",
+      "adminDemo": "Admin (Global)",
+      "dealerDemo": "Quản Lý Chi Nhánh (Hà Nội)",
+      "orDivider": "HOẶC"
+    },
+    "register": {
+      "title": "Tạo Tài Khoản Mới",
+      "subtitle": "Gia nhập hệ sinh thái quản lý đại lý ô tô VietAuto",
+      "fullNameLabel": "Họ và tên",
+      "fullNamePlaceholder": "Ví dụ: Nguyễn Văn A",
+      "emailLabel": "Email doanh nghiệp",
+      "emailPlaceholder": "name@dealership.com",
+      "phoneLabel": "Số điện thoại",
+      "phonePlaceholder": "Ví dụ: 0901234567",
+      "dealerNameLabel": "Tên đại lý / Xưởng dịch vụ",
+      "dealerNamePlaceholder": "Ví dụ: VietAuto Chi Nhánh Cầu Giấy",
+      "passwordLabel": "Mật khẩu",
+      "passwordPlaceholder": "Tối thiểu 6 ký tự",
+      "confirmPasswordLabel": "Xác nhận mật khẩu",
+      "confirmPasswordPlaceholder": "Nhập lại mật khẩu",
+      "agreeTerms": "Tôi đồng ý với Điều khoản dịch vụ & Chính sách bảo mật",
+      "submitBtn": "Tạo Tài Khoản",
+      "submittingBtn": "Đang khởi tạo tài khoản...",
+      "hasAccount": "Đã có tài khoản?",
+      "loginLink": "Đăng nhập tại đây"
+    },
+    "validation": {
+      "emailRequired": "Vui lòng nhập địa chỉ email",
+      "passwordRequired": "Vui lòng nhập mật khẩu",
+      "fullNameRequired": "Vui lòng nhập họ và tên",
+      "phoneRequired": "Vui lòng nhập số điện thoại",
+      "passwordMismatch": "Mật khẩu xác nhận không khớp",
+      "passwordTooShort": "Mật khẩu phải có ít nhất 6 ký tự",
+      "mustAgreeTerms": "Vui lòng đồng ý với Điều khoản dịch vụ để tiếp tục"
+    }
   }
 }

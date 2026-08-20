@@ -60,9 +60,11 @@ export function useCustomerDetail(customerId: string) {
       const bookingsForVehicle = customer.serviceBookings.filter(
         (b) => b.vehicle?.id === v.id
       );
-      const sorted = [...bookingsForVehicle].sort(
-        (a, b) => new Date(b.bookingDate).getTime() - new Date(a.bookingDate).getTime()
-      );
+      const sorted = [...bookingsForVehicle].sort((a, b) => {
+        const timeB = b.bookingDate ? new Date(b.bookingDate).getTime() : 0;
+        const timeA = a.bookingDate ? new Date(a.bookingDate).getTime() : 0;
+        return timeB - timeA;
+      });
       stats[v.id] = {
         totalBookings: bookingsForVehicle.length,
         lastServiced: sorted[0]?.bookingDate,

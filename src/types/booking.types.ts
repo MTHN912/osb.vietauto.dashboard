@@ -19,8 +19,8 @@ export interface Booking {
   packageType: PackageType;
   service: Service;
   services?: Service[];
-  bookingDate: string;
-  bookingTime: string;
+  bookingDate?: string;
+  bookingTime?: string;
   rentalStartDate?: string;
   rentalEndDate?: string;
   status: BookingStatus;

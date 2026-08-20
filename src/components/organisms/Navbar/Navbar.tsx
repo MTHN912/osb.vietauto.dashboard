@@ -4,7 +4,8 @@ import React from 'react';
 import styles from './Navbar.module.css';
 import { useThemeContext } from '@/context/ThemeContext';
 import { useI18n } from '@/hooks/common';
-import { Search, Bell, Calendar, Moon, Sun } from 'lucide-react';
+import Link from 'next/link';
+import { Search, Bell, Calendar, Moon, Sun, LogOut } from 'lucide-react';
 import { Avatar } from '@/components/atoms/Avatar';
 import { LanguageSwitcher } from '@/components/molecules/LanguageSwitcher';
 
@@ -67,6 +68,15 @@ export function Navbar() {
             color="#18181b"
           />
         </div>
+
+        <Link
+          href="/login"
+          className={styles.iconBtn}
+          title="Sign Out"
+          aria-label="Sign Out"
+        >
+          <LogOut size={16} />
+        </Link>
       </div>
     </header>
   );

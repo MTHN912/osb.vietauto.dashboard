@@ -1,0 +1,430 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary, #64748b);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  width: fit-content;
+}
+
+.backBtn:hover {
+  color: var(--primary, #2563eb);
+}
+
+.customerCard {
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.05));
+}
+
+.customerMain {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.customerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.customerName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+}
+
+.customerContact {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  color: var(--text-secondary, #64748b);
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.customerMetrics {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-subtle, #f8fafc);
+  border-radius: var(--radius-md, 8px);
+  min-width: 110px;
+}
+
+.metricValue {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--primary, #2563eb);
+}
+
+.metricLabel {
+  font-size: 0.75rem;
+  color: var(--text-secondary, #64748b);
+  font-weight: 500;
+}
+
+.section {
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.05));
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sectionTitleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sectionSubtitle {
+  font-size: 0.8125rem;
+  color: var(--text-secondary, #64748b);
+}
+
+.vehicleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.vehicleCard {
+  border: 1.5px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.25rem;
+  background: var(--bg-subtle, #f8fafc);
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  text-align: left;
+}
+
+.vehicleCard:hover {
+  border-color: var(--primary, #2563eb);
+  background: var(--bg-surface, #ffffff);
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+  transform: translateY(-2px);
+}
+
+.vehicleCardSelected {
+  border-color: var(--primary, #2563eb);
+  background: var(--bg-surface, #ffffff);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15), var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.vehicleCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.vehicleCardNameGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vehicleCardName {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-primary, #0f172a);
+}
+
+.vehicleCardStats {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.vehicleBookingsBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-full, 9999px);
+  background: var(--primary-light, #eff6ff);
+  color: var(--primary, #2563eb);
+}
+
+.vehicleDetails {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.625rem;
+  font-size: 0.8125rem;
+}
+
+.vehicleDetailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.vehicleDetailLabel {
+  font-size: 0.75rem;
+  color: var(--text-tertiary, #94a3b8);
+  font-weight: 500;
+}
+
+.vehicleDetailValue {
+  color: var(--text-primary, #0f172a);
+  font-weight: 600;
+}
+
+.vehicleCardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.625rem;
+  border-top: 1px dashed var(--border-color, #e2e8f0);
+  font-size: 0.75rem;
+  color: var(--text-secondary, #64748b);
+}
+
+.filterActionText {
+  color: var(--primary, #2563eb);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-subtle, #f8fafc);
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid var(--border-color, #e2e8f0);
+}
+
+.filterPills {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filterPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius-full, 9999px);
+  border: 1px solid var(--border-color, #e2e8f0);
+  background: var(--bg-surface, #ffffff);
+  color: var(--text-secondary, #64748b);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filterPill:hover {
+  background: var(--bg-hover, #f1f5f9);
+  color: var(--text-primary, #0f172a);
+}
+
+.filterPillActive {
+  background: var(--primary, #2563eb);
+  color: #ffffff;
+  border-color: var(--primary, #2563eb);
+}
+
+.filterPillActive:hover {
+  background: var(--primary-hover, #1d4ed8);
+  color: #ffffff;
+}
+
+.activeFilterNotice {
+  font-size: 0.8125rem;
+  color: var(--text-secondary, #64748b);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.selectedVehicleBanner {
+  background: var(--primary-light, #eff6ff);
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-md, 8px);
+  padding: 0.875rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+:global([data-theme='dark']) .selectedVehicleBanner {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.35);
+}
+
+.selectedVehicleInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.selectedVehicleName {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--text-primary, #0f172a);
+}
+
+.selectedVehicleMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--text-secondary, #64748b);
+}
+
+.mono {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.th {
+  background: var(--bg-hover, #f8fafc);
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary, #64748b);
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  white-space: nowrap;
+}
+
+.tr {
+  border-bottom: 1px solid var(--border-subtle, #f1f5f9);
+}
+
+.tr:last-child {
+  border-bottom: none;
+}
+
+.td {
+  padding: 0.875rem 1rem;
+  color: var(--text-primary, #0f172a);
+  vertical-align: middle;
+}
+
+.linkBooking {
+  color: var(--primary, #2563eb);
+  font-weight: 600;
+  text-decoration: none;
+  font-family: var(--font-mono, monospace);
+}
+
+.linkBooking:hover {
+  text-decoration: underline;
+}
+
+.emptySection {
+  padding: 2.5rem 1rem;
+  text-align: center;
+  color: var(--text-secondary, #64748b);
+  font-size: 0.875rem;
+  background: var(--bg-subtle, #f8fafc);
+  border-radius: var(--radius-md, 8px);
+  border: 1px dashed var(--border-color, #e2e8f0);
+}
+
+.loading,
+.notFound {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  color: var(--text-secondary, #64748b);
+}
+
+.notFound h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin-bottom: 0.5rem;
+}

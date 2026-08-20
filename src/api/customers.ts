@@ -35,8 +35,8 @@ export async function getCustomerDetailById(id: string): Promise<CustomerDetail 
     .map((b) => ({
       bookingId: b.id,
       rentalCar: b.rentalCar!,
-      rentalStartDate: b.rentalStartDate || b.bookingDate,
-      rentalEndDate: b.rentalEndDate || b.bookingDate,
+      rentalStartDate: b.rentalStartDate || b.bookingDate || b.createdAt,
+      rentalEndDate: b.rentalEndDate || b.bookingDate || b.createdAt,
       status: b.status,
       dealerId: b.dealerId,
       createdAt: b.createdAt,
