@@ -8,7 +8,6 @@ import { mockServices } from './services';
 const now = new Date().toISOString();
 
 export const mockBookings: Booking[] = [
-
   {
     id: 'BK-001',
     customer: mockCustomers[0],
@@ -72,7 +71,6 @@ export const mockBookings: Booking[] = [
     createdAt: '2024-08-12T08:00:00Z',
     updatedAt: now,
   },
-
   {
     id: 'BK-005',
     customer: mockCustomers[4],
@@ -132,7 +130,6 @@ export const mockBookings: Booking[] = [
     createdAt: '2024-08-11T12:20:00Z',
     updatedAt: now,
   },
-
   {
     id: 'BK-009',
     customer: mockCustomers[0],
@@ -140,6 +137,8 @@ export const mockBookings: Booking[] = [
     service: mockServices[13],
     bookingDate: '2024-08-23',
     bookingTime: '10:00',
+    rentalStartDate: '2024-08-23',
+    rentalEndDate: '2024-08-30',
     status: BookingStatus.BOOKED_IN,
     dealerId: 'dealer-1',
     rentalCar: mockRentalCars[0],
@@ -154,6 +153,8 @@ export const mockBookings: Booking[] = [
     service: mockServices[14],
     bookingDate: '2024-08-15',
     bookingTime: '11:00',
+    rentalStartDate: '2024-08-15',
+    rentalEndDate: '2024-08-22',
     status: BookingStatus.CHECK_IN,
     dealerId: 'dealer-1',
     rentalCar: mockRentalCars[1],
@@ -169,6 +170,8 @@ export const mockBookings: Booking[] = [
     service: mockServices[15],
     bookingDate: '2024-07-01',
     bookingTime: '09:00',
+    rentalStartDate: '2024-07-01',
+    rentalEndDate: '2024-07-10',
     status: BookingStatus.COMPLETE,
     dealerId: 'dealer-2',
     rentalCar: mockRentalCars[2],
@@ -185,6 +188,8 @@ export const mockBookings: Booking[] = [
     service: mockServices[16],
     bookingDate: '2024-08-28',
     bookingTime: '14:00',
+    rentalStartDate: '2024-08-28',
+    rentalEndDate: '2024-09-05',
     status: BookingStatus.CANCELLED,
     dealerId: 'dealer-2',
     rentalCar: mockRentalCars[4],
@@ -192,7 +197,6 @@ export const mockBookings: Booking[] = [
     createdAt: '2024-08-10T15:45:00Z',
     updatedAt: now,
   },
-
   {
     id: 'BK-013',
     customer: mockCustomers[1],
@@ -202,7 +206,7 @@ export const mockBookings: Booking[] = [
     bookingTime: '08:30',
     status: BookingStatus.BOOKED_IN,
     dealerId: 'dealer-1',
-    vehicle: mockVehicles[2],
+    vehicle: mockVehicles[1],
     checkInPhotos: [],
     createdAt: '2024-08-14T11:00:00Z',
     updatedAt: now,
@@ -250,6 +254,49 @@ export const mockBookings: Booking[] = [
     vehicle: mockVehicles[5],
     checkInPhotos: [],
     createdAt: '2024-08-13T14:30:00Z',
+    updatedAt: now,
+  },
+  {
+    id: 'BK-017',
+    customer: mockCustomers[0],
+    packageType: PackageType.CAR_SERVICE_REPAIR,
+    service: mockServices[5],
+    bookingDate: '2024-07-12',
+    bookingTime: '10:00',
+    status: BookingStatus.COMPLETE,
+    dealerId: 'dealer-1',
+    vehicle: mockVehicles[0],
+    checkInPhotos: ['photo13.jpg'],
+    customerSignature: 'data:image/png;base64,fakesignature9',
+    createdAt: '2024-07-02T10:00:00Z',
+    updatedAt: now,
+  },
+  {
+    id: 'BK-018',
+    customer: mockCustomers[0],
+    packageType: PackageType.CAR_DETAILING,
+    service: mockServices[17],
+    bookingDate: '2024-08-27',
+    bookingTime: '13:30',
+    status: BookingStatus.BOOKED_IN,
+    dealerId: 'dealer-1',
+    vehicle: mockVehicles[4],
+    checkInPhotos: [],
+    createdAt: '2024-08-15T15:00:00Z',
+    updatedAt: now,
+  },
+  {
+    id: 'BK-019',
+    customer: mockCustomers[1],
+    packageType: PackageType.CAR_SERVICE_REPAIR,
+    service: mockServices[6],
+    bookingDate: '2024-08-14',
+    bookingTime: '11:15',
+    status: BookingStatus.COMPLETE,
+    dealerId: 'dealer-1',
+    vehicle: mockVehicles[3],
+    checkInPhotos: [],
+    createdAt: '2024-08-01T12:00:00Z',
     updatedAt: now,
   },
 ];

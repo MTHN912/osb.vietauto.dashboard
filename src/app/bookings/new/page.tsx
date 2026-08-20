@@ -39,6 +39,8 @@ export default function NewBookingPage() {
     handleSubmit,
   } = useNewBooking();
 
+  const isRentalPackage = formData.packageType === PackageType.RENT_A_CAR;
+
   const packageOptions = useMemo(
     () => [
       { value: PackageType.INSURANCE_CLAIMS, label: t.packages.insuranceClaims },
@@ -121,6 +123,8 @@ export default function NewBookingPage() {
                   packageType: e.target.value as PackageType,
                   service: undefined,
                   services: undefined,
+                  rentalStartDate: undefined,
+                  rentalEndDate: undefined,
                 }))
               }
             />
@@ -426,14 +430,46 @@ export default function NewBookingPage() {
           >
             <h2><CalendarIcon size={24} /> {t.bookings.new.sections.datetimeInfo}</h2>
             <div className={styles.formGrid}>
-              <DatePicker
-                label={t.bookings.new.sections.bookingDate}
-                value={formData.bookingDate}
-                onChange={(date) => setFormData((d) => ({ ...d, bookingDate: date }))}
-                minDate={new Date().toISOString().split('T')[0]}
-                placeholder="mm/dd/yyyy"
-                required
-              />
+              {isRentalPackage ? (
+                <>
+                  <DatePicker
+                    label={t.bookings.new.sections.rentalStartDate}
+                    value={formData.rentalStartDate || formData.bookingDate}
+                    onChange={(date) =>
+                      setFormData((d) => ({
+                        ...d,
+                        rentalStartDate: date,
+                        bookingDate: date,
+                      }))
+                    }
+                    minDate={new Date().toISOString().split('T')[0]}
+                    placeholder="mm/dd/yyyy"
+                    required
+                  />
+                  <DatePicker
+                    label={t.bookings.new.sections.rentalEndDate}
+                    value={formData.rentalEndDate}
+                    onChange={(date) =>
+                      setFormData((d) => ({
+                        ...d,
+                        rentalEndDate: date,
+                      }))
+                    }
+                    minDate={formData.rentalStartDate || new Date().toISOString().split('T')[0]}
+                    placeholder="mm/dd/yyyy"
+                    required
+                  />
+                </>
+              ) : (
+                <DatePicker
+                  label={t.bookings.new.sections.bookingDate}
+                  value={formData.bookingDate}
+                  onChange={(date) => setFormData((d) => ({ ...d, bookingDate: date }))}
+                  minDate={new Date().toISOString().split('T')[0]}
+                  placeholder="mm/dd/yyyy"
+                  required
+                />
+              )}
 
               <Select
                 label={t.bookings.new.sections.bookingTime}
@@ -492,10 +528,23 @@ export default function NewBookingPage() {
                   })()}</span>
                 </div>
               )}
-              <div className={styles.confirmItem}>
-                <span className={styles.confirmLabel}>{t.bookings.new.sections.bookingDate}</span>
-                <span>{formData.bookingDate ? formatDate(formData.bookingDate) : '—'}</span>
-              </div>
+              {isRentalPackage ? (
+                <div className={styles.confirmItem}>
+                  <span className={styles.confirmLabel}>{t.bookings.new.sections.rentalPeriod}</span>
+                  <span>
+                    {formData.rentalStartDate && formData.rentalEndDate
+                      ? `${formatDate(formData.rentalStartDate)} ${t.common.to} ${formatDate(formData.rentalEndDate)}`
+                      : formData.bookingDate
+                      ? formatDate(formData.bookingDate)
+                      : '—'}
+                  </span>
+                </div>
+              ) : (
+                <div className={styles.confirmItem}>
+                  <span className={styles.confirmLabel}>{t.bookings.new.sections.bookingDate}</span>
+                  <span>{formData.bookingDate ? formatDate(formData.bookingDate) : '—'}</span>
+                </div>
+              )}
               <div className={styles.confirmItem}>
                 <span className={styles.confirmLabel}>{t.bookings.new.sections.bookingTime}</span>
                 <span>{formData.bookingTime ? formatTime(formData.bookingTime) : '—'}</span>

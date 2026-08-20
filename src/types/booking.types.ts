@@ -21,6 +21,8 @@ export interface Booking {
   services?: Service[];
   bookingDate: string;
   bookingTime: string;
+  rentalStartDate?: string;
+  rentalEndDate?: string;
   status: BookingStatus;
   dealerId: string;
   vehicle?: Vehicle;
@@ -59,4 +61,6 @@ export interface NewBookingFormData {
   rentalCarId?: string;
   bookingDate?: string;
   bookingTime?: string;
+  rentalStartDate?: string;
+  rentalEndDate?: string;
 }

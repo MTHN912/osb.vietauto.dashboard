@@ -1,4 +1,5 @@
 import { Customer } from '@/types';
+import { mockVehicles } from './vehicles';
 
 export const mockCustomers: Customer[] = [
   {
@@ -8,6 +9,7 @@ export const mockCustomers: Customer[] = [
     address: '1234 Elm Street, Houston, TX 77001',
     phone: '(713) 555-0101',
     email: 'james.nguyen@email.com',
+    vehicles: [mockVehicles[0], mockVehicles[4]],
   },
   {
     id: 'cust-2',
@@ -16,6 +18,7 @@ export const mockCustomers: Customer[] = [
     address: '5678 Oak Ave, Houston, TX 77002',
     phone: '(713) 555-0202',
     email: 'maria.garcia@email.com',
+    vehicles: [mockVehicles[1], mockVehicles[3]],
   },
   {
     id: 'cust-3',
@@ -24,6 +27,7 @@ export const mockCustomers: Customer[] = [
     address: '910 Pine Road, Sugar Land, TX 77479',
     phone: '(281) 555-0303',
     email: 'david.tran@email.com',
+    vehicles: [mockVehicles[2]],
   },
   {
     id: 'cust-4',
@@ -32,6 +36,7 @@ export const mockCustomers: Customer[] = [
     address: '2345 Maple Drive, Katy, TX 77449',
     phone: '(281) 555-0404',
     email: 'sarah.johnson@email.com',
+    vehicles: [mockVehicles[3]],
   },
   {
     id: 'cust-5',
@@ -40,6 +45,7 @@ export const mockCustomers: Customer[] = [
     address: '678 Cedar Lane, Pearland, TX 77584',
     phone: '(832) 555-0505',
     email: 'michael.pham@email.com',
+    vehicles: [mockVehicles[4]],
   },
   {
     id: 'cust-6',
@@ -48,6 +54,7 @@ export const mockCustomers: Customer[] = [
     address: '111 Birch Blvd, Missouri City, TX 77459',
     phone: '(832) 555-0606',
     email: 'emily.williams@email.com',
+    vehicles: [mockVehicles[5]],
   },
   {
     id: 'cust-7',
@@ -56,6 +63,7 @@ export const mockCustomers: Customer[] = [
     address: '333 Willow Court, Stafford, TX 77477',
     phone: '(713) 555-0707',
     email: 'robert.le@email.com',
+    vehicles: [mockVehicles[0], mockVehicles[4]],
   },
   {
     id: 'cust-8',
@@ -64,5 +72,6 @@ export const mockCustomers: Customer[] = [
     address: '444 Spruce Way, Richmond, TX 77406',
     phone: '(281) 555-0808',
     email: 'jessica.martinez@email.com',
+    vehicles: [mockVehicles[1], mockVehicles[5]],
   },
 ];

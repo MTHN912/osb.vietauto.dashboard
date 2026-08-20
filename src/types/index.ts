@@ -9,3 +9,4 @@ export * from './filter.types';
 export * from './theme.types';
 export * from './booking.types';
 export * from './case.types';
+export * from './revenue.types';

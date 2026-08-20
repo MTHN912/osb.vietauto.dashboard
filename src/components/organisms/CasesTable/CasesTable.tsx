@@ -1,13 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import styles from './CasesTable.module.css';
 import { Case, CaseStatus, PackageType } from '@/types';
 import { StatusPill } from '@/components/atoms/StatusPill';
 import { Avatar } from '@/components/atoms/Avatar';
 import { StatusFilterPopover } from '@/components/molecules/StatusFilterPopover';
 import { ColumnFilterPopover, FilterOption } from '@/components/molecules/ColumnFilterPopover';
-import { ArrowUpDown, ChevronDown, Sparkles, Wrench } from 'lucide-react';
+import { ArrowUpDown, ChevronDown, Eye, Edit2, Sparkles, Wrench } from 'lucide-react';
 import { CASE_STATUS_LIST, INSURANCE_COMPANIES, SERVICES_BY_PACKAGE } from '@/constants';
 import { mockStaff } from '@/mocks/staff';
 import { formatDate } from '@/utils';
@@ -102,25 +103,6 @@ export function CasesTable({
     label: m,
   }));
 
-  if (loading) {
-    return (
-      <div className={styles.loadingWrapper}>
-        <div className={styles.spinner} />
-        <p className={styles.loadingText}>{t.cases.table.loading}</p>
-      </div>
-    );
-  }
-
-  if (sortedCases.length === 0) {
-    return (
-      <div className={styles.emptyWrapper}>
-        <div className={styles.emptyIcon}>📁</div>
-        <h3 className={styles.emptyTitle}>{t.cases.table.emptyTitle}</h3>
-        <p className={styles.emptySubtitle}>{t.cases.table.emptySubtitle}</p>
-      </div>
-    );
-  }
-
   const togglePopover = (name: string) => {
     setOpenPopover((prev) => (prev === name ? null : name));
   };
@@ -134,15 +116,32 @@ export function CasesTable({
     }
   };
 
+  if (loading) {
+    return (
+      <div className={styles.loadingWrapper}>
+        <div className={styles.spinner} />
+        <p className={styles.loadingText}>{t.cases.table.loading}</p>
+      </div>
+    );
+  }
+
+  if (cases.length === 0) {
+    return (
+      <div className={styles.emptyWrapper}>
+        <div className={styles.emptyIcon}>📋</div>
+        <h3 className={styles.emptyTitle}>{t.cases.table.emptyTitle}</h3>
+        <p className={styles.emptySubtitle}>{t.cases.table.emptySubtitle}</p>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.tableCard}>
       <div className={styles.tableWrapper}>
         <table className={styles.table}>
           <thead>
             <tr>
-              <th className={styles.thCustomer}>
-                <span>{t.cases.table.customer}</span>
-              </th>
+              <th className={styles.thCustomer}>{t.cases.table.customer}</th>
 
               <th className={styles.thVehicle}>
                 <div className={styles.headerDropdownWrapper}>
@@ -165,6 +164,7 @@ export function CasesTable({
                       options={vehicleOptions}
                       selectedIds={selectedVehicleMakes}
                       onChange={onVehicleFilterChange}
+                      searchable
                     />
                   )}
                 </div>
@@ -175,18 +175,18 @@ export function CasesTable({
                   <button
                     type="button"
                     className={styles.headerDropdownBtn}
-                    onClick={() => togglePopover('insurance')}
-                    aria-expanded={openPopover === 'insurance'}
+                    onClick={() => togglePopover('payment')}
+                    aria-expanded={openPopover === 'payment'}
                   >
                     <span>{t.cases.table.insurance}</span>
-                    <ChevronDown size={14} className={`${styles.thSortIcon} ${openPopover === 'insurance' ? styles.rotated : ''}`} />
+                    <ChevronDown size={14} className={`${styles.thSortIcon} ${openPopover === 'payment' ? styles.rotated : ''}`} />
                     {selectedPaymentTypes.length > 0 && <span className={styles.filterDot} />}
                   </button>
 
                   {onPaymentTypeFilterChange && (
                     <ColumnFilterPopover
                       title={t.cases.table.insuranceCompanyFilter}
-                      isOpen={openPopover === 'insurance'}
+                      isOpen={openPopover === 'payment'}
                       onClose={() => setOpenPopover(null)}
                       options={insuranceOptions}
                       selectedIds={selectedPaymentTypes}
@@ -295,6 +295,8 @@ export function CasesTable({
                   )}
                 </div>
               </th>
+
+              <th className={styles.thActions}>{t.cases.table.actions}</th>
             </tr>
           </thead>
           <tbody>
@@ -385,6 +387,25 @@ export function CasesTable({
                         size="xs"
                       />
                       <span className={styles.assigneeName}>{c.assignee.name}</span>
+                    </div>
+                  </td>
+
+                  <td className={styles.tdActions}>
+                    <div className={styles.actions}>
+                      <Link
+                        href={`/cases/${c.id}`}
+                        className={styles.actionBtn}
+                        title={t.cases.table.viewTooltip}
+                      >
+                        <Eye size={15} />
+                      </Link>
+                      <Link
+                        href={`/cases/${c.id}?edit=true`}
+                        className={styles.actionBtn}
+                        title={t.cases.table.editTooltip}
+                      >
+                        <Edit2 size={15} />
+                      </Link>
                     </div>
                   </td>
                 </tr>

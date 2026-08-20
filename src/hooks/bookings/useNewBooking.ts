@@ -119,13 +119,20 @@ export function useNewBooking() {
         ? await customerApi.createCustomer(formData.newCustomerData!)
         : formData.customer!;
 
+      const isRental = formData.packageType === PackageType.RENT_A_CAR;
+      const primaryDate = isRental
+        ? formData.rentalStartDate || formData.bookingDate || ''
+        : formData.bookingDate || '';
+
       await bookingApi.createBooking({
         customer,
         packageType: formData.packageType!,
         service: formData.services?.[0] || formData.service!,
         services: formData.services || (formData.service ? [formData.service] : []),
-        bookingDate: formData.bookingDate!,
-        bookingTime: formData.bookingTime!,
+        bookingDate: primaryDate,
+        bookingTime: formData.bookingTime || '09:00',
+        rentalStartDate: isRental ? formData.rentalStartDate : undefined,
+        rentalEndDate: isRental ? formData.rentalEndDate : undefined,
         status: BookingStatus.BOOKED_IN,
         dealerId: selectedDealer === 'global' ? 'dealer-1' : selectedDealer,
         vehicle: formData.vehicle

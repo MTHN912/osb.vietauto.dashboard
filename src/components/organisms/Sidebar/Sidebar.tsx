@@ -11,6 +11,7 @@ import {
   FolderKanban,
   Calendar,
   Users,
+  Building2,
   Car,
   Wrench,
   PanelLeftClose,
@@ -44,7 +45,7 @@ export function Sidebar() {
       items: [
         {
           label: t.nav.overview,
-          href: '/dealers',
+          href: '/',
           icon: <LayoutGrid size={18} />,
         },
         {
@@ -59,6 +60,11 @@ export function Sidebar() {
           icon: <Calendar size={18} />,
         },
         {
+          label: t.nav.customers,
+          href: '/customers',
+          icon: <Users size={18} />,
+        },
+        {
           label: t.nav.services,
           href: '/services',
           icon: <Wrench size={18} />,
@@ -71,7 +77,7 @@ export function Sidebar() {
         {
           label: t.nav.teamDealers,
           href: '/dealers',
-          icon: <Users size={18} />,
+          icon: <Building2 size={18} />,
         },
         {
           label: t.nav.inventoryFleet,
@@ -118,6 +124,14 @@ export function Sidebar() {
                     ? pathname.startsWith('/cases')
                     : item.href === '/bookings'
                     ? pathname.startsWith('/bookings')
+                    : item.href === '/customers'
+                    ? pathname.startsWith('/customers')
+                    : item.href === '/dealers'
+                    ? pathname.startsWith('/dealers')
+                    : item.href === '/rental-cars'
+                    ? pathname.startsWith('/rental-cars')
+                    : item.href === '/services'
+                    ? pathname.startsWith('/services')
                     : pathname === item.href;
 
                 return (
