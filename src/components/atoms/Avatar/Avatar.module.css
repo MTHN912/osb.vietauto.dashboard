@@ -1,0 +1,56 @@
+.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  color: #ffffff;
+  font-weight: 600;
+  user-select: none;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px var(--card-bg, #ffffff);
+}
+
+.clickable {
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.clickable:hover {
+  transform: scale(1.08);
+  z-index: 10;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.xs {
+  width: 22px;
+  height: 22px;
+  font-size: 0.625rem;
+}
+
+.sm {
+  width: 28px;
+  height: 28px;
+  font-size: 0.75rem;
+}
+
+.md {
+  width: 34px;
+  height: 34px;
+  font-size: 0.8125rem;
+}
+
+.lg {
+  width: 44px;
+  height: 44px;
+  font-size: 1rem;
+}
+
+.initials {
+  line-height: 1;
+}

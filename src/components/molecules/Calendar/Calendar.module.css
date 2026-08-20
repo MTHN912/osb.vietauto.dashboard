@@ -1,0 +1,107 @@
+.calendar {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  gap: 0.5rem;
+}
+
+.navButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.navButton:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.monthLabel {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  text-align: center;
+  flex: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.weekday {
+  text-align: center;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  padding-bottom: 0.35rem;
+  user-select: none;
+}
+
+.dayCell {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  padding: 0;
+  border: none;
+}
+
+.dayDisabled {
+  background-color: transparent;
+  color: var(--text-tertiary);
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.daySelectable {
+  background-color: transparent;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.daySelectable:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.daySelected, .daySelected.daySelectable {
+  background-color: #1e293b;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+:global([data-theme='dark']) .daySelected,
+:global([data-theme='dark']) .daySelected.daySelectable {
+  background-color: #3b82f6;
+  color: #ffffff;
+}

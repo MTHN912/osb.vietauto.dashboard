@@ -1,0 +1,68 @@
+import { Customer } from '@/types';
+
+export const mockCustomers: Customer[] = [
+  {
+    id: 'cust-1',
+    firstName: 'James',
+    lastName: 'Nguyen',
+    address: '1234 Elm Street, Houston, TX 77001',
+    phone: '(713) 555-0101',
+    email: 'james.nguyen@email.com',
+  },
+  {
+    id: 'cust-2',
+    firstName: 'Maria',
+    lastName: 'Garcia',
+    address: '5678 Oak Ave, Houston, TX 77002',
+    phone: '(713) 555-0202',
+    email: 'maria.garcia@email.com',
+  },
+  {
+    id: 'cust-3',
+    firstName: 'David',
+    lastName: 'Tran',
+    address: '910 Pine Road, Sugar Land, TX 77479',
+    phone: '(281) 555-0303',
+    email: 'david.tran@email.com',
+  },
+  {
+    id: 'cust-4',
+    firstName: 'Sarah',
+    lastName: 'Johnson',
+    address: '2345 Maple Drive, Katy, TX 77449',
+    phone: '(281) 555-0404',
+    email: 'sarah.johnson@email.com',
+  },
+  {
+    id: 'cust-5',
+    firstName: 'Michael',
+    lastName: 'Pham',
+    address: '678 Cedar Lane, Pearland, TX 77584',
+    phone: '(832) 555-0505',
+    email: 'michael.pham@email.com',
+  },
+  {
+    id: 'cust-6',
+    firstName: 'Emily',
+    lastName: 'Williams',
+    address: '111 Birch Blvd, Missouri City, TX 77459',
+    phone: '(832) 555-0606',
+    email: 'emily.williams@email.com',
+  },
+  {
+    id: 'cust-7',
+    firstName: 'Robert',
+    lastName: 'Le',
+    address: '333 Willow Court, Stafford, TX 77477',
+    phone: '(713) 555-0707',
+    email: 'robert.le@email.com',
+  },
+  {
+    id: 'cust-8',
+    firstName: 'Jessica',
+    lastName: 'Martinez',
+    address: '444 Spruce Way, Richmond, TX 77406',
+    phone: '(281) 555-0808',
+    email: 'jessica.martinez@email.com',
+  },
+];

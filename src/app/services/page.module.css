@@ -1,0 +1,84 @@
+.page {
+  max-width: 800px;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.content {
+  margin-top: 1.25rem;
+}
+
+.addRow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+  margin-bottom: 1.25rem;
+}
+
+.addRow > :first-child {
+  flex: 1;
+}
+
+.serviceList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.serviceItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+}
+
+.serviceItem:hover {
+  background-color: var(--bg-hover);
+}
+
+.serviceInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.serviceName {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+  padding: 0.25rem;
+}
+
+.deleteBtn:hover {
+  opacity: 1;
+}
+
+.loading, .empty {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+}

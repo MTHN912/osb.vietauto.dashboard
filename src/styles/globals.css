@@ -1,0 +1,347 @@
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+:root,
+[data-theme='light'] {
+
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f3f7;
+  --bg-hover: #f3f4f6;
+  --bg-active: #e5e7eb;
+
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #9ca3af;
+  --text-inverse: #ffffff;
+
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-light: #eff6ff;
+  --accent-text: #1d4ed8;
+
+  --btn-primary-bg: #18181b;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #27272a;
+
+  --border: #e5e7eb;
+  --border-subtle: #f3f4f6;
+  --border-hover: #d1d5db;
+  --border-focus: #18181b;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+
+  --status-booked-in: #2563eb;
+  --status-booked-in-bg: #eff6ff;
+  --status-check-in: #f59e0b;
+  --status-check-in-bg: #fffbeb;
+  --status-complete: #10b981;
+  --status-complete-bg: #ecfdf5;
+  --status-cancelled: #ef4444;
+  --status-cancelled-bg: #fef2f2;
+  --status-need-estimate: #8b5cf6;
+  --status-need-estimate-bg: #f5f3ff;
+
+  --status-case-draft: #6b7280;
+  --status-case-draft-bg: #f3f4f6;
+  --status-case-draft-text: #374151;
+  --status-case-draft-border: #e5e7eb;
+
+  --status-case-filed: #d97706;
+  --status-case-filed-bg: #fffbeb;
+  --status-case-filed-text: #b45309;
+  --status-case-filed-border: #fef3c7;
+
+  --status-case-pending: #ca8a04;
+  --status-case-pending-bg: #fefce8;
+  --status-case-pending-text: #a16207;
+  --status-case-pending-border: #fef08a;
+
+  --status-case-waiting-check: #d97706;
+  --status-case-waiting-check-bg: #fffbeb;
+  --status-case-waiting-check-text: #b45309;
+  --status-case-waiting-check-border: #fde68a;
+
+  --status-case-waiting-parts: #eab308;
+  --status-case-waiting-parts-bg: #fefce8;
+  --status-case-waiting-parts-text: #a16207;
+  --status-case-waiting-parts-border: #fef08a;
+
+  --status-case-estimate: #9333ea;
+  --status-case-estimate-bg: #faf5ff;
+  --status-case-estimate-text: #7e22ce;
+  --status-case-estimate-border: #f3e8ff;
+
+  --status-case-inspected: #7c3aed;
+  --status-case-inspected-bg: #f5f3ff;
+  --status-case-inspected-text: #6d28d9;
+  --status-case-inspected-border: #ede9fe;
+
+  --status-case-supplement: #a21caf;
+  --status-case-supplement-bg: #fdf4ff;
+  --status-case-supplement-text: #86198f;
+  --status-case-supplement-border: #fae8ff;
+
+  --status-case-completed: #16a34a;
+  --status-case-completed-bg: #f0fdf4;
+  --status-case-completed-text: #15803d;
+  --status-case-completed-border: #dcfce7;
+
+  --navbar-bg: #ffffff;
+  --navbar-border: #e5e7eb;
+  --navbar-text: #111827;
+
+  --sidebar-bg: #ffffff;
+  --sidebar-border: #e5e7eb;
+  --sidebar-text: #4b5563;
+  --sidebar-text-active: #111827;
+  --sidebar-bg-active: #f3f4f6;
+  --sidebar-icon: #6b7280;
+  --sidebar-icon-active: #111827;
+
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+
+  --table-header-bg: #f9fafb;
+  --table-header-text: #6b7280;
+  --table-row-hover: #f9fafb;
+  --table-border: #f3f4f6;
+
+  --input-bg: #ffffff;
+  --input-border: #e5e7eb;
+  --input-focus-border: #111827;
+  --input-focus-ring: rgba(17, 24, 39, 0.1);
+  --input-placeholder: #9ca3af;
+
+  --overlay: rgba(15, 23, 42, 0.4);
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --danger-light: #fee2e2;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --transition: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme='dark'] {
+
+  --bg-primary: #090d16;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1a2234;
+  --bg-hover: #1f293d;
+  --bg-active: #28354f;
+
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --text-tertiary: #6b7280;
+  --text-inverse: #090d16;
+
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-light: rgba(59, 130, 246, 0.15);
+  --accent-text: #93c5fd;
+
+  --btn-primary-bg: #3b82f6;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #2563eb;
+
+  --border: #1f293d;
+  --border-subtle: #161f30;
+  --border-hover: #334155;
+  --border-focus: #3b82f6;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.6), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.7), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+
+  --status-booked-in: #60a5fa;
+  --status-booked-in-bg: rgba(96, 165, 250, 0.15);
+  --status-check-in: #fbbf24;
+  --status-check-in-bg: rgba(251, 191, 36, 0.15);
+  --status-complete: #34d399;
+  --status-complete-bg: rgba(52, 211, 153, 0.15);
+  --status-cancelled: #f87171;
+  --status-cancelled-bg: rgba(248, 113, 113, 0.15);
+  --status-need-estimate: #a78bfa;
+  --status-need-estimate-bg: rgba(167, 139, 250, 0.15);
+
+  --status-case-draft: #9ca3af;
+  --status-case-draft-bg: rgba(156, 163, 175, 0.15);
+  --status-case-draft-text: #e5e7eb;
+  --status-case-draft-border: rgba(156, 163, 175, 0.25);
+
+  --status-case-filed: #fbbf24;
+  --status-case-filed-bg: rgba(245, 158, 11, 0.15);
+  --status-case-filed-text: #fcd34d;
+  --status-case-filed-border: rgba(245, 158, 11, 0.3);
+
+  --status-case-pending: #facc15;
+  --status-case-pending-bg: rgba(234, 179, 8, 0.15);
+  --status-case-pending-text: #fde047;
+  --status-case-pending-border: rgba(234, 179, 8, 0.3);
+
+  --status-case-waiting-check: #fb923c;
+  --status-case-waiting-check-bg: rgba(249, 115, 22, 0.15);
+  --status-case-waiting-check-text: #fdba74;
+  --status-case-waiting-check-border: rgba(249, 115, 22, 0.3);
+
+  --status-case-waiting-parts: #fde047;
+  --status-case-waiting-parts-bg: rgba(250, 204, 21, 0.15);
+  --status-case-waiting-parts-text: #fef08a;
+  --status-case-waiting-parts-border: rgba(250, 204, 21, 0.3);
+
+  --status-case-estimate: #c084fc;
+  --status-case-estimate-bg: rgba(168, 85, 247, 0.15);
+  --status-case-estimate-text: #e9d5ff;
+  --status-case-estimate-border: rgba(168, 85, 247, 0.3);
+
+  --status-case-inspected: #a78bfa;
+  --status-case-inspected-bg: rgba(139, 92, 246, 0.15);
+  --status-case-inspected-text: #ddd6fe;
+  --status-case-inspected-border: rgba(139, 92, 246, 0.3);
+
+  --status-case-supplement: #e879f9;
+  --status-case-supplement-bg: rgba(217, 70, 239, 0.15);
+  --status-case-supplement-text: #f5d0fe;
+  --status-case-supplement-border: rgba(217, 70, 239, 0.3);
+
+  --status-case-completed: #4ade80;
+  --status-case-completed-bg: rgba(34, 197, 94, 0.15);
+  --status-case-completed-text: #bbf7d0;
+  --status-case-completed-border: rgba(34, 197, 94, 0.3);
+
+  --navbar-bg: #111827;
+  --navbar-border: #1f293d;
+  --navbar-text: #f9fafb;
+
+  --sidebar-bg: #111827;
+  --sidebar-border: #1f293d;
+  --sidebar-text: #9ca3af;
+  --sidebar-text-active: #ffffff;
+  --sidebar-bg-active: #1f293d;
+  --sidebar-icon: #6b7280;
+  --sidebar-icon-active: #ffffff;
+
+  --card-bg: #111827;
+  --card-border: #1f293d;
+
+  --table-header-bg: #161f30;
+  --table-header-text: #9ca3af;
+  --table-row-hover: #161f30;
+  --table-border: #1f293d;
+
+  --input-bg: #161f30;
+  --input-border: #1f293d;
+  --input-focus-border: #3b82f6;
+  --input-focus-ring: rgba(59, 130, 246, 0.2);
+  --input-placeholder: #6b7280;
+
+  --overlay: rgba(0, 0, 0, 0.7);
+  --danger: #f87171;
+  --danger-hover: #ef4444;
+  --danger-light: rgba(248, 113, 113, 0.15);
+  --success: #34d399;
+  --warning: #fbbf24;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+h1 { font-size: 1.75rem; font-weight: 700; }
+h2 { font-size: 1.375rem; }
+h3 { font-size: 1.125rem; }
+h4 { font-size: 1rem; }
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

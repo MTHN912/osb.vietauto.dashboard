@@ -1,0 +1,162 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.required {
+  color: var(--danger);
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 0;
+  height: 38px;
+  padding: 0 0.75rem;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  gap: 0.4rem;
+}
+
+.inputWrapper:hover {
+  border-color: var(--border-hover);
+}
+
+.focused {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px var(--input-focus-ring);
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--bg-secondary);
+}
+
+.hasError {
+  border-color: var(--danger);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  font-variant-numeric: tabular-nums;
+  font-family: inherit;
+}
+
+.input::placeholder {
+  color: var(--input-placeholder);
+  font-size: 0.875rem;
+}
+
+.iconActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.calendarIcon {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+  transition: color var(--transition);
+}
+
+.inputWrapper:hover .calendarIcon {
+  color: var(--text-secondary);
+}
+
+.clearBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--bg-tertiary);
+  border: none;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  padding: 0;
+  transition: all var(--transition);
+}
+
+.clearBtn:hover {
+  background-color: var(--danger-light);
+  color: var(--danger);
+}
+
+.errorText {
+  font-size: 0.75rem;
+  color: var(--danger);
+  margin-top: 0.15rem;
+}
+
+.popover {
+  position: absolute;
+  top: calc(100% + 6px);
+  z-index: 100;
+  width: 290px;
+  min-width: 290px;
+  max-width: 300px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: 0.35rem;
+  animation: fadeIn 0.15s ease-out;
+  box-sizing: border-box;
+}
+
+.left {
+  left: 0;
+  right: auto;
+}
+
+.right {
+  right: 0;
+  left: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

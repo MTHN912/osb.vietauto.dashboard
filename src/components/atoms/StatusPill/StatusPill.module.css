@@ -1,0 +1,114 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  user-select: none;
+  transition: opacity 0.15s ease;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  opacity: 0.85;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.BookedIn {
+  color: var(--status-booked-in);
+  background-color: var(--status-booked-in-bg);
+}
+
+.CheckIn {
+  color: var(--status-check-in);
+  background-color: var(--status-check-in-bg);
+}
+
+.Complete {
+  color: var(--status-complete);
+  background-color: var(--status-complete-bg);
+}
+
+.Cancelled {
+  color: var(--status-cancelled);
+  background-color: var(--status-cancelled-bg);
+}
+
+.NeedEstimate {
+  color: var(--status-need-estimate);
+  background-color: var(--status-need-estimate-bg);
+}
+
+.Draft {
+  color: var(--status-case-draft-text);
+  background-color: var(--status-case-draft-bg);
+  border-color: var(--status-case-draft-border);
+}
+
+.Filed {
+  color: var(--status-case-filed-text);
+  background-color: var(--status-case-filed-bg);
+  border-color: var(--status-case-filed-border);
+}
+
+.Pendinginspection {
+  color: var(--status-case-pending-text);
+  background-color: var(--status-case-pending-bg);
+  border-color: var(--status-case-pending-border);
+}
+
+.Waitingforcheck {
+  color: var(--status-case-waiting-check-text);
+  background-color: var(--status-case-waiting-check-bg);
+  border-color: var(--status-case-waiting-check-border);
+}
+
+.Waitingonparts {
+  color: var(--status-case-waiting-parts-text);
+  background-color: var(--status-case-waiting-parts-bg);
+  border-color: var(--status-case-waiting-parts-border);
+}
+
+.Estimatesent {
+  color: var(--status-case-estimate-text);
+  background-color: var(--status-case-estimate-bg);
+  border-color: var(--status-case-estimate-border);
+}
+
+.Inspected {
+  color: var(--status-case-inspected-text);
+  background-color: var(--status-case-inspected-bg);
+  border-color: var(--status-case-inspected-border);
+}
+
+.Supplementsent {
+  color: var(--status-case-supplement-text);
+  background-color: var(--status-case-supplement-bg);
+  border-color: var(--status-case-supplement-border);
+}
+
+.Completed {
+  color: var(--status-case-completed-text);
+  background-color: var(--status-case-completed-bg);
+  border-color: var(--status-case-completed-border);
+}
+
+.custom {
+  color: var(--text-secondary);
+  background-color: var(--bg-tertiary);
+}

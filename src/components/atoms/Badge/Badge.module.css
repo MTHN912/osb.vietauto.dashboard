@@ -1,0 +1,61 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  line-height: 1;
+  user-select: none;
+}
+
+.sm {
+  padding: 0.15rem 0.35rem;
+  font-size: 0.6875rem;
+  border-radius: 999px;
+}
+
+.md {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.default {
+  color: var(--text-secondary);
+  background-color: var(--bg-tertiary);
+}
+
+.neutral {
+  color: var(--text-secondary);
+  background-color: var(--bg-hover);
+  border: 1px solid var(--border);
+}
+
+.count {
+  color: var(--text-secondary);
+  background-color: var(--bg-tertiary);
+  border-radius: 999px;
+  padding: 0.15rem 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.accent {
+  color: var(--accent-text);
+  background-color: var(--accent-light);
+}
+
+.success {
+  color: var(--status-complete);
+  background-color: var(--status-complete-bg);
+}
+
+.warning {
+  color: var(--status-check-in);
+  background-color: var(--status-check-in-bg);
+}
+
+.danger {
+  color: var(--status-cancelled);
+  background-color: var(--status-cancelled-bg);
+}
