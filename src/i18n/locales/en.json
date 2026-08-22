@@ -669,5 +669,50 @@
       "passwordTooShort": "Password must be at least 6 characters",
       "mustAgreeTerms": "You must agree to the Terms of Service"
     }
+  },
+  "viewToggle": {
+    "list": "List",
+    "calendar": "Calendar",
+    "viewAsList": "View as list table",
+    "viewAsCalendar": "View as calendar schedule"
+  },
+  "calendarView": {
+    "today": "Today",
+    "month": "Month",
+    "year": "Year",
+    "prevMonth": "Previous Month",
+    "nextMonth": "Next Month",
+    "noEvents": "No bookings / cases on this date",
+    "eventsForDate": "Schedule for {date}",
+    "totalEvents": "{count} event(s)",
+    "viewBooking": "View Booking",
+    "viewCase": "View Case",
+    "daySummary": "{count} item(s)",
+    "inspectionDate": "Inspection Date:",
+    "bookingDate": "Booking Date:",
+    "allBookingsOnDate": "All bookings for {date}",
+    "allCasesOnDate": "All cases for {date}"
+  },
+  "imageUploader": {
+    "title": "Intake / Inspection Photos",
+    "takePhoto": "Take Photo",
+    "openCamera": "Open Camera",
+    "chooseFiles": "Choose Files",
+    "dragDrop": "Drag & drop photos here or click to browse",
+    "supports": "Supports JPG, PNG, WEBP (Max {max} photos)",
+    "takePhotoMobile": "Take with Camera",
+    "takePhotoWebcam": "Take with Webcam",
+    "photosCount": "{count}/{max} photos selected",
+    "deleteTooltip": "Delete this photo",
+    "previewTooltip": "Preview photo",
+    "cameraTitle": "Camera Photo Capture",
+    "cameraSubtitle": "Frame the vehicle clearly and click capture",
+    "captureBtn": "Capture Photo",
+    "retakeBtn": "Retake",
+    "usePhotoBtn": "Use Photo",
+    "switchCameraBtn": "Switch Camera",
+    "cameraError": "Unable to access camera. Please grant camera permission or select files from device.",
+    "previewTitle": "Photo Preview"
   }
 }
+

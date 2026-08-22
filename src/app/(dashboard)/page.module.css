@@ -420,3 +420,20 @@
   text-align: center;
   color: var(--text-secondary, #64748b);
 }
+
+@media (max-width: 768px) {
+  .page {
+    padding: 0;
+    gap: 1.25rem;
+  }
+
+  .headerTitle {
+    font-size: 1.375rem;
+  }
+
+  .chartContainer {
+    height: 160px;
+    gap: 0.5rem;
+  }
+}
+

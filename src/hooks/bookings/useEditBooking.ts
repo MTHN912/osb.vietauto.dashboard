@@ -144,32 +144,67 @@ export function useEditBooking(bookingId?: string) {
     });
   }, []);
 
-  const startDraw = useCallback((e: MouseEvent<HTMLCanvasElement>) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    setIsDrawing(true);
-    const rect = canvas.getBoundingClientRect();
-    ctx.beginPath();
-    ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
-  }, []);
+  const getCoordinates = useCallback(
+    (
+      e: MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>,
+      canvas: HTMLCanvasElement
+    ) => {
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
 
-  const draw = useCallback((e: MouseEvent<HTMLCanvasElement>) => {
-    if (!isDrawing) return;
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    const rect = canvas.getBoundingClientRect();
-    ctx.strokeStyle =
-      getComputedStyle(document.documentElement).getPropertyValue('--text-primary').trim() ||
-      '#000';
-    ctx.lineWidth = 2;
-    ctx.lineCap = 'round';
-    ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
-    ctx.stroke();
-  }, [isDrawing]);
+      let clientX = 0;
+      let clientY = 0;
+
+      if ('touches' in e && e.touches.length > 0) {
+        clientX = e.touches[0].clientX;
+        clientY = e.touches[0].clientY;
+      } else if ('clientX' in e) {
+        clientX = (e as MouseEvent<HTMLCanvasElement>).clientX;
+        clientY = (e as MouseEvent<HTMLCanvasElement>).clientY;
+      }
+
+      return {
+        x: (clientX - rect.left) * scaleX,
+        y: (clientY - rect.top) * scaleY,
+      };
+    },
+    []
+  );
+
+  const startDraw = useCallback(
+    (e: MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      setIsDrawing(true);
+      const { x, y } = getCoordinates(e, canvas);
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+    },
+    [getCoordinates]
+  );
+
+  const draw = useCallback(
+    (e: MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
+      if (!isDrawing) return;
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      const { x, y } = getCoordinates(e, canvas);
+      ctx.strokeStyle =
+        getComputedStyle(document.documentElement).getPropertyValue('--text-primary').trim() ||
+        '#000';
+      ctx.lineWidth = 2.5;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.lineTo(x, y);
+      ctx.stroke();
+    },
+    [isDrawing, getCoordinates]
+  );
 
   const endDraw = useCallback(() => {
     setIsDrawing(false);
@@ -187,6 +222,7 @@ export function useEditBooking(bookingId?: string) {
     }
     setSignature(null);
   }, []);
+
 
   const handleCheckInSubmit = useCallback(async () => {
     if (!booking) return;
@@ -231,6 +267,7 @@ export function useEditBooking(bookingId?: string) {
     editVehicle,
     setEditVehicle,
     checkInPhotos,
+    setCheckInPhotos,
     signature,
     canvasRef,
     depositFile,
@@ -247,3 +284,4 @@ export function useEditBooking(bookingId?: string) {
     getAvailableStatuses,
   };
 }
+

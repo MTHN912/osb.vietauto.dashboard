@@ -126,7 +126,12 @@
 }
 
 @media (max-width: 900px) {
+  .page {
+    padding: 0;
+  }
+
   .statsGrid {
     grid-template-columns: 1fr;
   }
 }
+

@@ -1,0 +1,52 @@
+.viewToggle {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2px;
+  gap: 2px;
+}
+
+.toggleBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+  user-select: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.toggleBtn:hover {
+  color: var(--text-primary);
+}
+
+.active {
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  font-weight: 600;
+  box-shadow: var(--shadow-xs);
+}
+
+.btnText {
+  display: inline;
+}
+
+@media (max-width: 640px) {
+  .btnText {
+    display: none;
+  }
+  
+  .toggleBtn {
+    padding: 0.4rem 0.55rem;
+  }
+}

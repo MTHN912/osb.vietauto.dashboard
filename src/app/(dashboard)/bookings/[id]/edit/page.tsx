@@ -2,12 +2,13 @@
 
 import React from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import Image from 'next/image';
 import styles from './page.module.css';
+
 import { Button } from '@/components/atoms/Button';
 import { Input } from '@/components/atoms/Input';
 import { StatusPill } from '@/components/atoms/StatusPill';
 import { DatePicker } from '@/components/molecules/DatePicker';
+import { ImageUploader } from '@/components/molecules/ImageUploader';
 import { BookingStatus } from '@/types';
 import { packageRequiresInsurance } from '@/utils';
 import { useEditBooking, EditTab } from '@/hooks/bookings';
@@ -34,6 +35,7 @@ export default function EditBookingPage() {
     editVehicle,
     setEditVehicle,
     checkInPhotos,
+    setCheckInPhotos,
     signature,
     canvasRef,
     depositFile,
@@ -41,7 +43,6 @@ export default function EditBookingPage() {
     handleSaveDetails,
     handleStatusChange,
     handleDepositUpload,
-    handlePhotoCapture,
     startDraw,
     draw,
     endDraw,
@@ -49,6 +50,7 @@ export default function EditBookingPage() {
     handleCheckInSubmit,
     getAvailableStatuses,
   } = useEditBooking(params.id as string);
+
 
   if (loading) {
     return <div className={styles.loading}>{t.common.loading}</div>;
@@ -177,34 +179,12 @@ export default function EditBookingPage() {
             <p className={styles.helpText}>{t.bookings.edit.checkInSection.helpText}</p>
 
             <div className={styles.checkInSection}>
-              <h3>{t.bookings.edit.checkInSection.photosTitle}</h3>
-              <input
-                type="file"
-                accept="image/*"
-                multiple
-                onChange={handlePhotoCapture}
-                className={styles.fileInput}
-                id="photo-capture"
+              <ImageUploader
+                photos={checkInPhotos}
+                onChange={setCheckInPhotos}
+                maxPhotos={12}
+                title={t.bookings.edit.checkInSection.photosTitle}
               />
-              <label htmlFor="photo-capture" className={styles.fileLabel}>
-                {t.bookings.edit.checkInSection.addPhotosBtn}
-              </label>
-              {checkInPhotos.length > 0 && (
-                <div className={styles.photoGrid}>
-                  {checkInPhotos.map((photo, i) => (
-                    <div key={i} className={styles.photoThumb}>
-                      {photo.startsWith('data:') ? (
-                        <Image src={photo} alt={`Check-in photo ${i + 1}`} width={120} height={90} unoptimized style={{ objectFit: 'cover' }} />
-                      ) : (
-                        <div className={styles.photoPlaceholder}>📷 {photo}</div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              )}
-              <p className={styles.photoCount}>
-                {interpolate(t.common.photoCount, { count: checkInPhotos.length })}
-              </p>
             </div>
 
             <div className={styles.checkInSection}>
@@ -219,6 +199,9 @@ export default function EditBookingPage() {
                   onMouseMove={draw}
                   onMouseUp={endDraw}
                   onMouseLeave={endDraw}
+                  onTouchStart={startDraw}
+                  onTouchMove={draw}
+                  onTouchEnd={endDraw}
                 />
                 <div className={styles.signatureActions}>
                   <Button variant="ghost" size="sm" onClick={clearSignature}>{t.bookings.edit.checkInSection.clearBtn}</Button>
@@ -226,6 +209,7 @@ export default function EditBookingPage() {
                 </div>
               </div>
             </div>
+
 
             <div className={styles.saveRow}>
               <Button

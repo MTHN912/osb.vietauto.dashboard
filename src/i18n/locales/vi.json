@@ -669,5 +669,50 @@
       "passwordTooShort": "Mật khẩu phải có ít nhất 6 ký tự",
       "mustAgreeTerms": "Vui lòng đồng ý với Điều khoản dịch vụ để tiếp tục"
     }
+  },
+  "viewToggle": {
+    "list": "Danh sách",
+    "calendar": "Lịch",
+    "viewAsList": "Xem dạng danh sách bảng",
+    "viewAsCalendar": "Xem dạng lịch biểu"
+  },
+  "calendarView": {
+    "today": "Hôm nay",
+    "month": "Tháng",
+    "year": "Năm",
+    "prevMonth": "Tháng trước",
+    "nextMonth": "Tháng sau",
+    "noEvents": "Không có lịch hẹn / hồ sơ nào trong ngày này",
+    "eventsForDate": "Danh sách ngày {date}",
+    "totalEvents": "{count} sự kiện",
+    "viewBooking": "Xem lịch hẹn",
+    "viewCase": "Xem hồ sơ",
+    "daySummary": "{count} mục",
+    "inspectionDate": "Ngày giám định:",
+    "bookingDate": "Ngày hẹn:",
+    "allBookingsOnDate": "Tất cả lịch hẹn ngày {date}",
+    "allCasesOnDate": "Tất cả hồ sơ ngày {date}"
+  },
+  "imageUploader": {
+    "title": "Ảnh chụp tiếp nhận / Kiểm tra",
+    "takePhoto": "Chụp ảnh ngay",
+    "openCamera": "Mở Camera",
+    "chooseFiles": "Chọn ảnh từ máy",
+    "dragDrop": "Kéo thả ảnh vào đây hoặc nhấp để chọn",
+    "supports": "Hỗ trợ JPG, PNG, WEBP (Tối đa {max} ảnh)",
+    "takePhotoMobile": "Chụp bằng camera",
+    "takePhotoWebcam": "Chụp bằng Webcam",
+    "photosCount": "Đã chọn {count}/{max} ảnh",
+    "deleteTooltip": "Xóa ảnh này",
+    "previewTooltip": "Xem phóng to",
+    "cameraTitle": "Chụp ảnh từ Camera",
+    "cameraSubtitle": "Căn chỉnh góc chụp phương tiện rõ nét rồi nhấn chụp",
+    "captureBtn": "Chụp ảnh",
+    "retakeBtn": "Chụp lại",
+    "usePhotoBtn": "Sử dụng ảnh này",
+    "switchCameraBtn": "Đổi camera",
+    "cameraError": "Không thể truy cập camera. Vui lòng cấp quyền camera hoặc chọn ảnh từ máy.",
+    "previewTitle": "Xem chi tiết ảnh"
   }
 }
+

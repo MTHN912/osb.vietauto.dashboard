@@ -1,16 +1,18 @@
 'use client';
 
-import React, { useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import styles from './page.module.css';
 import { Tabs, TabItem } from '@/components/atoms/Tabs';
 import { Button } from '@/components/atoms/Button';
+import { ViewToggle, ViewMode } from '@/components/atoms/ViewToggle';
 import { StatCard } from '@/components/molecules/StatCard';
 import { AvatarGroup } from '@/components/molecules/AvatarGroup';
 import { TimeFilterPopover } from '@/components/molecules/TimeFilterPopover';
 import { Pagination } from '@/components/molecules/Pagination';
 import { CasesTable } from '@/components/organisms/CasesTable';
 import { NewCaseModal } from '@/components/organisms/NewCaseModal';
-import { CaseTabType } from '@/types';
+import { ScheduleCalendar, CalendarEvent } from '@/components/organisms/ScheduleCalendar';
+import { CaseTabType, Case, CaseStatus } from '@/types';
 import { mockStaff } from '@/mocks/staff';
 import { useDealerContext } from '@/context/DealerContext';
 import { useCases } from '@/hooks/cases';
@@ -20,6 +22,7 @@ import { Plus, Download, Search, RotateCcw } from 'lucide-react';
 export default function CasesPage() {
   const { selectedDealer } = useDealerContext();
   const { t } = useI18n();
+  const [viewMode, setViewMode] = useState<ViewMode>('list');
 
   const {
     activeTab,
@@ -74,6 +77,35 @@ export default function CasesPage() {
     ],
     [t, draftCount, inProgressCount, completeCount]
   );
+
+  // Map cases to calendar events by inspectionDate (fallback to startDate)
+  const calendarEvents: CalendarEvent<Case>[] = useMemo(() => {
+    return cases.map((c) => {
+      const customerName = `${c.customer.firstName} ${c.customer.lastName}`.trim();
+      const eventDate = c.inspectionDate || c.startDate;
+      const isPendingInspection = !c.inspectionDate;
+      const subtitle = `${c.insurance.insuranceCompany} • ${c.vehicle.year} ${c.vehicle.make} ${c.vehicle.model}`;
+
+      let variant: CalendarEvent['statusVariant'] = 'primary';
+      if (c.status === CaseStatus.DRAFT) variant = 'gray';
+      else if (c.status === CaseStatus.FILED) variant = 'warning';
+      else if (c.status === CaseStatus.PENDING_INSPECTION) variant = 'warning';
+      else if (c.status === CaseStatus.INSPECTED) variant = 'purple';
+      else if (c.status === CaseStatus.COMPLETED) variant = 'success';
+
+      return {
+        id: c.id,
+        date: eventDate,
+        title: `${c.id} - ${customerName}`,
+        subtitle,
+        status: c.status,
+        statusVariant: variant,
+        badge: isPendingInspection ? t.common.pending : undefined,
+        data: c,
+        href: `/cases/${c.id}`,
+      };
+    });
+  }, [cases, t]);
 
   return (
     <div className={styles.page}>
@@ -140,6 +172,8 @@ export default function CasesPage() {
         </div>
 
         <div className={styles.toolbarControls}>
+          <ViewToggle value={viewMode} onChange={setViewMode} />
+
           <AvatarGroup
             staffList={mockStaff}
             selectedStaffId={selectedAssigneeIds[0]}
@@ -173,27 +207,37 @@ export default function CasesPage() {
         </div>
       </div>
 
-      <CasesTable
-        cases={paginatedCases}
-        loading={loading}
-        selectedStatuses={selectedStatuses}
-        onStatusFilterChange={setSelectedStatuses}
-        selectedPaymentTypes={selectedPaymentTypes}
-        onPaymentTypeFilterChange={setSelectedPaymentTypes}
-        selectedClaimTypes={selectedClaimTypes}
-        onClaimTypeFilterChange={setSelectedClaimTypes}
-        selectedAssigneeIds={selectedAssigneeIds}
-        onAssigneeFilterChange={setSelectedAssigneeIds}
-        selectedVehicleMakes={selectedVehicleMakes}
-        onVehicleFilterChange={setSelectedVehicleMakes}
-        onUpdateStatus={handleUpdateStatus}
-      />
+      {viewMode === 'list' ? (
+        <>
+          <CasesTable
+            cases={paginatedCases}
+            loading={loading}
+            selectedStatuses={selectedStatuses}
+            onStatusFilterChange={setSelectedStatuses}
+            selectedPaymentTypes={selectedPaymentTypes}
+            onPaymentTypeFilterChange={setSelectedPaymentTypes}
+            selectedClaimTypes={selectedClaimTypes}
+            onClaimTypeFilterChange={setSelectedClaimTypes}
+            selectedAssigneeIds={selectedAssigneeIds}
+            onAssigneeFilterChange={setSelectedAssigneeIds}
+            selectedVehicleMakes={selectedVehicleMakes}
+            onVehicleFilterChange={setSelectedVehicleMakes}
+            onUpdateStatus={handleUpdateStatus}
+          />
 
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={setCurrentPage}
-      />
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+          />
+        </>
+      ) : (
+        <ScheduleCalendar<Case>
+          events={calendarEvents}
+          initialDate={cases.length > 0 ? (cases[0].inspectionDate || cases[0].startDate) : undefined}
+          agendaTitle={t.calendarView.allCasesOnDate}
+        />
+      )}
 
       <NewCaseModal
         isOpen={isNewCaseModalOpen}
@@ -204,3 +248,4 @@ export default function CasesPage() {
     </div>
   );
 }
+

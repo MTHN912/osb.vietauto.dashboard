@@ -5,17 +5,34 @@ import styles from './Navbar.module.css';
 import { useThemeContext } from '@/context/ThemeContext';
 import { useI18n } from '@/hooks/common';
 import Link from 'next/link';
-import { Search, Bell, Calendar, Moon, Sun, LogOut } from 'lucide-react';
+import { Search, Bell, Calendar, Moon, Sun, LogOut, Menu } from 'lucide-react';
 import { Avatar } from '@/components/atoms/Avatar';
 import { LanguageSwitcher } from '@/components/molecules/LanguageSwitcher';
 
-export function Navbar() {
+export interface NavbarProps {
+  onToggleMobileMenu?: () => void;
+}
+
+export function Navbar({ onToggleMobileMenu }: NavbarProps) {
   const { theme, toggleTheme } = useThemeContext();
   const { t } = useI18n();
 
   return (
     <header className={styles.navbar}>
-      <div className={styles.left} />
+      <div className={styles.left}>
+        {onToggleMobileMenu && (
+          <button
+            type="button"
+            className={styles.menuBtn}
+            onClick={onToggleMobileMenu}
+            aria-label="Open menu"
+          >
+            <Menu size={20} />
+          </button>
+        )}
+        <span className={styles.mobileBrand}>VietAuto</span>
+      </div>
+
 
       <div className={styles.right}>
         <div className={styles.searchWrapper}>

@@ -5,3 +5,5 @@ export * from './NewCaseModal';
 export * from './BookingTable';
 export * from './BookingFilterPanel';
 export * from './CustomerTable';
+export * from './ScheduleCalendar';
+

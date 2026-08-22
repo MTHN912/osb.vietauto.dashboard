@@ -180,3 +180,42 @@
   background-color: var(--accent);
   border: 1.5px solid var(--sidebar-bg);
 }
+
+.backdrop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: var(--overlay);
+    backdrop-filter: blur(4px);
+    z-index: 90;
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    width: 270px !important;
+    height: 100vh;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sidebar.mobileOpen {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
